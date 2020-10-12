@@ -139,10 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h" />
+    <ClCompile Include="Doctor.cpp" />
+    <ClCompile Include="Head_Doctor.cpp" />
+    <ClCompile Include="Medstaff.cpp" />
+    <ClCompile Include="Nurse.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
+    <ClInclude Include="Doctor.h" />
+    <ClInclude Include="Head_Doctor.h" />
+    <ClInclude Include="Nurse.h" />
+    <ClInclude Include="Medstaff.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

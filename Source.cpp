@@ -1,40 +1,39 @@
 #include <iostream>
-#include "Header.h"
+#include <Windows.h>
+#include "Medstaff.h"
+#include "Doctor.h"
+#include "Nurse.h"
+#include "Head_Doctor.h"
+
+using namespace std;
 
 int main()
 {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	
+	Doctor Doctor("Врач", 27); 
+	Nurse Nurse("Медсестра", 15);
+	Head_Doctor Head_Doctor("Заведующий отделением", 30);
+	int record_of_service = NULL;
+	int total_record_of_service = 0; 
 
-    std::string position;
-    std::string service;
+	string position;
+	cin >> position;
+	Doctor.set_position(position); 
+	Nurse.set_position(position);
+	Head_Doctor.set_position(position);
+	Doctor.set_record_of_service(record_of_service);
+	Nurse.set_record_of_service(record_of_service);
+	Head_Doctor.set_record_of_service(record_of_service);
 
-    // Ввод имени с клавиатуры
-    std::cout << "Position: ";
-    getline(std::cin, position);
+	// надо разобраться, не выводит то, что я хочу. Завтра буду решать 
 
-    // Передача параметров конструктору
-    Medstaff* headdoctor = new Medstaff(position);
+	Doctor.get_info();
+	Nurse.get_info();
+	Head_Doctor.get_info();
 
-    // Стаж
-    int service[5];
-    // Общтй стаж
-    int sum = 0;
+	// total_record_of_service += Doctor(record_of_service) + Nurse(record_of_service) + Head_Doctor(record_of_service);
+	cout << "Общий стаж " << total_record_of_service << endl << endl;
 
-    // Ввод промежуточных данных 
-    for (int i = 0; i < 5; ++i) {
-        std::cout << "Periods of service " << i + 1 << ": ";
-        std::cin >> service[i];
-        // суммирование
-        sum += service[i];
-    }
-    // Сохраняем промежуточные оценки в объект класса Medstaff
-    headdoctor->set_service(service);
-
- 
-    // Выводим данные по сотруднику
-    std::cout << "Average record of service " << headdoctor->get_position() << " "
-        << " is "
-        << headdoctor->get_service() << std::endl;
-    // Удаление объекта student из памяти
-    delete headdoctor;
-    return 0;
 }
