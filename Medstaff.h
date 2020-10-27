@@ -5,31 +5,35 @@
 using namespace std;
 
 class Medstaff
-{
-public:
-	string _position;
-	int _record_of_service;
+{   
+	
+public: 
+	string position;
+	int record_of_service;
 
 	Medstaff(string new_position = "Должность",  int new_service = NULL) :
-		_position(new_position),
-		_record_of_service(new_service) {}
+		position(new_position),
+		record_of_service(new_service) {}
 	void set_position(string new_position) {
-		_position = new_position;
+		position = new_position;
 	}
 	void set_record_of_service(int new_service) {
-		_record_of_service = new_service;
+		record_of_service = new_service;
 	}
 	string get_position() {
-		return _position;
+		return position;
 	}
 	int get_service() {
-		return _record_of_service;
+		return record_of_service;
 	}
 	virtual void get_info() {
-		cout << "Должность " << _position << endl;
+		cout << "Должность " << position << endl;
+	}
+	int total_record_of_service(){
+		return 0;
 	}
 	~Medstaff()
 	{
-		cout << "Должность " << _position << " уволен(а)" << endl;
+		cout << "Должность " << position << " уволен(а)" << endl;
 	}
 };

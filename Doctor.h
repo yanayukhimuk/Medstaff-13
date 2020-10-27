@@ -12,8 +12,8 @@ public:
 		Medstaff(new_position, new_service)
 	{}
 	void get_info() {
-		cout << "Должность " << _position << endl;
-		cout << "\t" << "Стаж работы " << _record_of_service << endl;
+		cout << "Должность " << position << endl;
+		cout << "\t" << "Стаж работы " << record_of_service << endl;
 		cout << endl;
 	}
 };
